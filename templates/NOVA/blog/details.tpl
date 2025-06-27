@@ -32,15 +32,15 @@
                             {/block}
                         {else}
                             {block name='blog-details-noauthor'}
-                                <div itemprop="author publisher" itemscope itemtype="https://schema.org/Organization" class="d-none">
+                                <div itemprop="author publisher" itemscope itemtype="https://schema.org/Organization" class="hidden">
                                     <span itemprop="name">{$meta_publisher}</span>
                                     <meta itemprop="logo" content="{$ShopLogoURL}" />
                                 </div>
-                                <time itemprop="datePublished" datetime="{$dDate}" class="d-none">{$dDate}</time><span class="creation-date">{$newsItem->getDateValidFrom()->format('Y-m-d H:i:s')}</span>
+                                <time itemprop="datePublished" datetime="{$dDate}" class="hidden">{$dDate}</time><span class="creation-date">{$newsItem->getDateValidFrom()->format('Y-m-d H:i:s')}</span>
                             {/block}
                         {/if}
-                        <time itemprop="datePublished" datetime="{$dDate}" class="d-none">{$dDate}</time>
-                        {if isset($newsItem->getDateCreated()->format('Y-m-d H:i:s'))}<time itemprop="dateModified" class="d-none">{$newsItem->getDateCreated()->format('Y-m-d H:i:s')}</time>{/if}
+                        <time itemprop="datePublished" datetime="{$dDate}" class="hidden">{$dDate}</time>
+                        {if isset($newsItem->getDateCreated()->format('Y-m-d H:i:s'))}<time itemprop="dateModified" class="hidden">{$newsItem->getDateCreated()->format('Y-m-d H:i:s')}</time>{/if}
 
                         {if isset($Einstellungen.news.news_kategorie_unternewsanzeigen) && $Einstellungen.news.news_kategorie_unternewsanzeigen === 'Y' && !empty($oNewsKategorie_arr)}
                             {block name='blog-details-sub-news'}

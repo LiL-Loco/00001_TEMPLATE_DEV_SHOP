@@ -13,14 +13,14 @@
                     {/link}
                 {/block}
                 {block name='boxes-box-wishlist-title'}
-                    <div class="productlist-filter-headline align-items-center-util d-none d-md-flex">
+                    <div class="productlist-filter-headline align-items-center-util hidden md:flex">
                         <i class='fa fa-heart icon-mr-2'></i>
                         {lang key='wishlist'}
                     </div>
                 {/block}
                 {block name='boxes-box-wishlist-collapse'}
                     {collapse
-                        class="d-md-block"
+                        class="md:block"
                         visible=false
                         id="crd-cllps-{$oBox->getID()}"
                         aria=["labelledby"=>"crd-hdr-{$oBox->getID()}"]}
@@ -90,7 +90,7 @@
         </div>
     {else}
         {block name='boxes-box-wishlist-no-items'}
-            <section class="d-none box-wishlist" id="sidebox{$oBox->getID()}"></section>
+            <section class="hidden box-wishlist" id="sidebox{$oBox->getID()}"></section>
         {/block}
     {/if}
 {/block}

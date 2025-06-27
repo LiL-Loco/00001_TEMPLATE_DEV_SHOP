@@ -10,7 +10,7 @@
                 {input class="filter-search" placeholder={lang key='filterSearchPlaceholder' section='productOverview' printf=$name}}
             {/block}
             {block name='snippets-filter-search-in-items-clear'}
-                <span class="form-clear d-none"><i class="fas fa-times"></i></span>
+                <span class="form-clear hidden"><i class="fas fa-times"></i></span>
             {/block}
         {/inputgroup}
     {/if}

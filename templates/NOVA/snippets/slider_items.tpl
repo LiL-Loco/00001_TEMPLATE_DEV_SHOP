@@ -52,7 +52,7 @@
                             {block name='snippets-slider-items-freegift-caption'}
                                 <div class="caption">
                                     {if $item->getProduct()->cBestellwert !== null}
-                                        <p class="small text-muted-util d-none">
+                                        <p class="small text-muted-util hidden">
                                             {lang key='freeGiftFrom1'} {$item->getProduct()->cBestellwert} {lang key='freeGiftFrom2'}
                                         </p>
                                     {/if}

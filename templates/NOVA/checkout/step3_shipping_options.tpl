@@ -164,7 +164,7 @@
                                     {col cols=12 md=5 class='ml-auto-util order-1 order-md-2'}
                                         {input type="hidden" name="versandartwahl" value="1"}
                                         {input type="hidden" name="zahlungsartwahl" value="1"}
-                                        {button type="submit" variant="primary" class="submit_once d-none button-row-mb" block=true}
+                                        {button type="submit" variant="primary" class="submit_once hidden button-row-mb" block=true}
                                             {lang key='continueOrder' section='account data'}
                                         {/button}
                                     {/col}

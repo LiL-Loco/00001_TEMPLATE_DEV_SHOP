@@ -4,7 +4,7 @@
     {/block}
     {block name='snippets-categories-mega-recursive-main-link'}
         {link href=$mainCategory->getURL()
-            class="categories-recursive-link d-lg-block {if $firstChild}submenu-headline submenu-headline-toplevel{/if} {$subCategory} {if $mainCategory->hasChildren() && $subCategory < $max_subsub_items && $Einstellungen.template.megamenu.show_subcategories !== 'N'}nav-link dropdown-toggle{/if}"
+            class="categories-recursive-link lg:block {if $firstChild}submenu-headline submenu-headline-toplevel{/if} {$subCategory} {if $mainCategory->hasChildren() && $subCategory < $max_subsub_items && $Einstellungen.template.megamenu.show_subcategories !== 'N'}nav-link dropdown-toggle{/if}"
             aria=["expanded"=>"false"]
             data=["category-id"=>$mainCategory->getID()]}
             {if $firstChild
@@ -28,7 +28,7 @@
             <div class="categories-recursive-dropdown dropdown-menu">
                 {nav}
                     {block name='snippets-categories-mega-recursive-child-header'}
-                        <li class="nav-item d-lg-none">
+                        <li class="nav-item lg:hidden">
                             {link href=$mainCategory->getURL()}
                                 <strong class="nav-mobile-heading">
                                     {lang key='menuShow' printf=$mainCategory->getShortName()}

@@ -1,12 +1,9 @@
-{$class = "row {$params.class->getValue()}"}
+{$class = "grid grid-cols-12 gap-4 {$params.class->getValue()}"}
 {if $params['align-h']->hasValue()}
-    {$class = "{$class} justify-content-{$params['align-h']->getValue()}"}
+    {$class = "{$class} justify-{$params['align-h']->getValue()}"}
 {/if}
 {if $params['align-v']->hasValue()}
-    {$class = "{$class} align-items-{$params['align-v']->getValue()}"}
-{/if}
-{if $params['no-gutters']->getValue() === true}
-    {$class = "{$class} no-gutters"}
+    {$class = "{$class} items-{$params['align-v']->getValue()}"}
 {/if}
 
 

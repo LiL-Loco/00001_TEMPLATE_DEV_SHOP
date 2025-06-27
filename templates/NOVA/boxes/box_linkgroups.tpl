@@ -14,13 +14,13 @@
             {/link}
         {/block}
         {block name='boxes-box-linkgroups-title'}
-            <div class="productlist-filter-headline d-none d-md-flex">
+            <div class="productlist-filter-headline hidden md:flex">
                 {$oBox->getTitle()}
             </div>
         {/block}
         {block name='boxes-box-linkgroups-content'}
             {collapse
-                class="d-md-block"
+                class="md:block"
                 visible=false
                 id="crd-cllps-{$oBox->getID()}"
                 aria=["labelledby"=>"crd-hdr-{$oBox->getID()}"]}

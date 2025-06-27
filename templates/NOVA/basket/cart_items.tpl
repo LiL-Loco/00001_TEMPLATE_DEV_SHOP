@@ -1,5 +1,5 @@
 {block name='basket-cart-items'}
-    {input type="submit" name="fake" class="d-none"}
+    {input type="submit" name="fake" class="hidden"}
     {block name='basket-cart-items-cols'}
         {$itemInfoCols=4}
         {$cols=12}
@@ -11,7 +11,7 @@
     {/block}
     {block name='basket-cart-items-order-items'}
         {block name='basket-cart-items-order-items-header'}
-            {row class="cart-items-header text-accent d-none d-xl-flex"}
+            {row class="cart-items-header text-accent hidden d-xl-flex"}
                 {if $Einstellungen.kaufabwicklung.warenkorb_produktbilder_anzeigen === 'Y'}
                     {col cols=2}{/col}
                 {/if}

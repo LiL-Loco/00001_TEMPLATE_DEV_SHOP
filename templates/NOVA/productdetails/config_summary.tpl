@@ -34,10 +34,10 @@
                         <a id="cfg-nav-{$configGroup->getID()}"
                            class="cfg-group js-cfg-group {if $configGroup@first}visited{/if}"
                            href="#cfg-grp-{$configGroup->getID()}" data-id="{$configGroup->getID()}">
-                            {$configLocalization->getName()} <span class="{if $isValid}d-none {/if}cfg-group-icon cfg-group-check js-group-checked"
+                            {$configLocalization->getName()} <span class="{if $isValid}hidden {/if}cfg-group-icon cfg-group-check js-group-checked"
                                                                    {if $configGroup->getMin() == 0}title="{lang key='configIsOptional' section='productDetails'}"
                                                                    data-toggle="tooltip"{/if}><i class="fas fa-check"></i></span>
-                            <span class="{if !$isValid}d-none {/if}cfg-group-icon cfg-group-missing"
+                            <span class="{if !$isValid}hidden {/if}cfg-group-icon cfg-group-missing"
                                   title="{lang key='configIsNotCorrect' section='productDetails'} <br> {$incorrectText}"
                                   data-toggle="tooltip"
                                 data-html="true"><i class="fas fa-times"></i></span>

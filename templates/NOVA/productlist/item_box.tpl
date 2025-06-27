@@ -17,7 +17,7 @@
          tabindex="0"
          class="productbox productbox-column {if !empty($hasOnlyListableVariations) && empty($Artikel->FunktionsAttribute[\FKT_ATTRIBUT_NO_GAL_VAR_PREVIEW])}productbox-show-variations {/if} productbox-hover{if isset($class)} {$class}{/if} {if $showVariationCollapse}show-variation-collapse{/if}">
         {block name='productlist-item-box-include-productlist-actions'}
-            <div class="productbox-quick-actions productbox-onhover d-none d-md-flex">
+            <div class="productbox-quick-actions productbox-onhover hidden md:flex">
                 {include file='productlist/productlist_actions.tpl'}
             </div>
         {/block}

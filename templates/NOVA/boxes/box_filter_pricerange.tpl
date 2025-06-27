@@ -3,7 +3,7 @@
         && $nSeitenTyp === $smarty.const.PAGE_ARTIKELLISTE
         && !($isMobile || $Einstellungen.template.productlist.filter_placement === 'modal')}
         {block name='boxes-box-filter-pricerange-content'}
-            <div id="sidebox{$oBox->getID()}" class="box box-filter-price d-none d-lg-block js-price-range-box">
+            <div id="sidebox{$oBox->getID()}" class="box box-filter-price hidden lg:block js-price-range-box">
                 {button
                     variant="link"
                     class="btn-filter-box dropdown-toggle"

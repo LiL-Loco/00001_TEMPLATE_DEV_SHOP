@@ -33,7 +33,7 @@
                         || ($unregForm !== 1 && !empty($fehlendeAngaben))}show{else}hidden{/if}" aria-expanded="true"}
                             {block name='register-form-customer-account-password-first'}
                                 {col cols=12 md=6}
-                                    <div class="form-group register-form-account-password d-flex flex-column {if isset($fehlendeAngaben.pass_zu_kurz) || isset($fehlendeAngaben.pass_ungleich) || isset($fehlendeAngaben.pass_zu_lang)} has-error{/if}" role="group">
+                                    <div class="form-group register-form-account-password flex flex-column {if isset($fehlendeAngaben.pass_zu_kurz) || isset($fehlendeAngaben.pass_ungleich) || isset($fehlendeAngaben.pass_zu_lang)} has-error{/if}" role="group">
                                         {input type="password"
                                             placeholder=" "
                                             id="password"

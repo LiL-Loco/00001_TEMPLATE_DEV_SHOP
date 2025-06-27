@@ -6,8 +6,8 @@
     {block name='layout-header-menu-single-row-main'}
         {block name='layout-header-menu-single-row-top-bar-outer'}
             {if $menuScroll && $Einstellungen.template.header.menu_show_topbar === 'Y'}
-                <div id="header-top-bar" class="d-none topbar-wrapper full-width-mega {if $Einstellungen.template.header.header_full_width === 'Y'}is-fullwidth{/if} {if $nSeitenTyp !== $smarty.const.PAGE_BESTELLVORGANG}d-lg-flex{/if}">
-                    <div class="{if $headerWidth === 'B'}container{else}container-fluid {if $headerWidth === 'N'}container-fluid-xl{/if}{/if} {if $nSeitenTyp !== $smarty.const.PAGE_BESTELLVORGANG}d-lg-flex flex-row-reverse{/if}">
+                <div id="header-top-bar" class="hidden topbar-wrapper full-width-mega {if $Einstellungen.template.header.header_full_width === 'Y'}is-fullwidth{/if} {if $nSeitenTyp !== $smarty.const.PAGE_BESTELLVORGANG}lg:flex{/if}">
+                    <div class="{if $headerWidth === 'B'}container{else}w-full {if $headerWidth === 'N'}max-w-screen-xl{/if}{/if} {if $nSeitenTyp !== $smarty.const.PAGE_BESTELLVORGANG}lg:flex flex-row-reverse{/if}">
                         {block name='layout-header-menu-single-row-top-bar-outer-include-header-top-bar'}
                             {include file='layout/header_top_bar.tpl'}
                         {/block}
@@ -17,7 +17,7 @@
         {/block}
         {block name='layout-header-menu-single-row-nav'}
             {block name='layout-header-menu-single-row-nav-main'}
-                <div class="hide-navbar {if $headerWidth === 'B'}container{else}container-fluid {if $headerWidth === 'N'}container-fluid-xl{/if}{/if}
+                <div class="hide-navbar {if $headerWidth === 'B'}container{else}w-full {if $headerWidth === 'N'}max-w-screen-xl{/if}{/if}
                             menu-search-position-{$Einstellungen.template.header.menu_search_position}">
                     {navbar toggleable=true fill=true type="expand-lg" class="row justify-content-center align-items-center-util"}
                         {block name='layout-header-menu-single-row-logo'}
@@ -36,7 +36,7 @@
                                         {/col}
                                     {/block}
                                     {block name='layout-header-menu-single-row-top-bar-inner'}
-                                        {col class="secure-checkout-topbar col-auto ml-auto-util d-none d-lg-block order-4"}
+                                        {col class="secure-checkout-topbar col-auto ml-auto-util hidden lg:block order-4"}
                                             {include file='layout/header_top_bar.tpl'}
                                         {/col}
                                     {/block}
@@ -59,7 +59,7 @@
             {/block}
             {block name='layout-header-menu-single-row-nav-categories'}
                 {if $nSeitenTyp !== $smarty.const.PAGE_BESTELLVORGANG}
-                    <div class="{if $headerWidth === 'B'}container{else}container-fluid {if $headerWidth === 'N'}container-fluid-xl{/if}{/if}
+                    <div class="{if $headerWidth === 'B'}container{else}w-full {if $headerWidth === 'N'}max-w-screen-xl{/if}{/if}
                         menu-center-{$Einstellungen.template.header.menu_center}
                         menu-multiple-rows-{$Einstellungen.template.header.menu_multiple_rows}">
                         {navbar toggleable=true fill=true type="expand-lg" class="justify-content-start {if $nSeitenTyp === $smarty.const.PAGE_BESTELLVORGANG}align-items-center-util{else}align-items-lg-end{/if}"}
@@ -115,17 +115,17 @@
                         function setState(state) {
                             if (state === 'closed') {
                                 if (!isClosed) {
-                                    $topbar.removeClass('d-lg-flex');
-                                    $navbar.addClass('d-none');
-                                    $home.addClass('d-lg-block');
+                                    $topbar.removeClass('lg:flex');
+                                    $navbar.addClass('hidden');
+                                    $home.addClass('lg:block');
                                     $.evo.resetForParallax();
                                 }
                                 isClosed = true;
                             } else if (state === 'open') {
                                 if (isClosed) {
-                                    $topbar.addClass('d-lg-flex');
-                                    $navbar.removeClass('d-none');
-                                    $home.removeClass('d-lg-block');
+                                    $topbar.addClass('lg:flex');
+                                    $navbar.removeClass('hidden');
+                                    $home.removeClass('lg:block');
                                     scrollTopActive = false;
                                     $.evo.resetForParallax();
                                 }

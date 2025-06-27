@@ -91,7 +91,7 @@
                 {container fluid=$Link->getIsFluid() class="{if $Einstellungen.template.theme.left_sidebar === 'Y' && $boxesLeftActive}container-plus-sidebar{/if}"}
                     {block name='comparelist-index-products-header-label'}
                         {button size="sm" variant="outline-secondary" id="switch-label"}
-                            <span class="comparelist-label d-none">{lang key='showLabels' section='comparelist'}</span>
+                            <span class="comparelist-label hidden">{lang key='showLabels' section='comparelist'}</span>
                             <span class="comparelist-label">{lang key='hideLabels' section='comparelist'}</span>
                         {/button}
                     {/block}
@@ -343,18 +343,18 @@
             {inline_script}<script>
                 $(document).ready(function () {
                     $('.comparelist-checkbox').on('change', function () {
-                        $('[data-id="row-' + $(this).data('id') + '"]').toggleClass('d-none');
+                        $('[data-id="row-' + $(this).data('id') + '"]').toggleClass('hidden');
                     });
                     $('#check-all').on('click', function () {
                         $('.comparelist-checkbox').prop('checked', true);
-                        $('.comparelist-row').removeClass('d-none');
+                        $('.comparelist-row').removeClass('hidden');
                     });
                     $('#check-none').on('click', function () {
                         $('.comparelist-checkbox').prop('checked', false);
-                        $('.comparelist-row').addClass('d-none');
+                        $('.comparelist-row').addClass('hidden');
                     });
                     $('#switch-label').on('click', function () {
-                        $('.comparelist-label').toggleClass('d-none');
+                        $('.comparelist-label').toggleClass('hidden');
                     });
                 });
             </script>{/inline_script}

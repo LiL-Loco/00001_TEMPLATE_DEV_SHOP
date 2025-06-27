@@ -28,7 +28,7 @@
                                 {include file='snippets/ribbon.tpl'}
                             {/block}
                             {block name='productlist-item-box-include-productlist-actions'}
-                                <div class="productbox-quick-actions productbox-onhover d-none d-md-flex">
+                                <div class="productbox-quick-actions productbox-onhover hidden md:flex">
                                     {include file='productlist/productlist_actions.tpl'}
                                 </div>
                             {/block}

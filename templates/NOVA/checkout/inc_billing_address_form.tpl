@@ -278,7 +278,7 @@
                                 {block name='checkout-inc-billing-address-form-state'}
                                     {formgroup class="{if isset($fehlendeAngaben.bundesland)} has-error{/if}"
                                         label-for="billing_address-state"
-                                        label="{lang key='state' section='account data'}<span class='state-optional optional {if $Einstellungen.kunden.kundenregistrierung_abfragen_bundesland === 'Y' || $selectedCountry->isRequireStateDefinition()}d-none{/if}'> - {lang key='optional'}</span>"
+                                        label="{lang key='state' section='account data'}<span class='state-optional optional {if $Einstellungen.kunden.kundenregistrierung_abfragen_bundesland === 'Y' || $selectedCountry->isRequireStateDefinition()}hidden{/if}'> - {lang key='optional'}</span>"
                                     }
                                         {if isset($fehlendeAngaben.bundesland)}
                                             <div class="form-error-msg"><i class="fas fa-exclamation-triangle"></i>

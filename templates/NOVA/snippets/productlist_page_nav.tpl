@@ -21,7 +21,7 @@
                             {elseif $isTablet || $Einstellungen.template.productlist.filter_placement === 'modal'}
                                 {$filterPlacement="modal"}
                             {/if}
-                            <div id="improve_search" class="result-option-wrapper {if $filterPlacement !== 'collapse'}d-inline-block btn-group{/if} {if $filterPlacement === ''}d-lg-none{/if}">
+                            <div id="improve_search" class="result-option-wrapper {if $filterPlacement !== 'collapse'}d-inline-block btn-group{/if} {if $filterPlacement === ''}lg:hidden{/if}">
                                 {include file='productlist/result_options.tpl'
                                     itemCount=$Suchergebnisse->getProductCount()
                                     filterPlacement=$filterPlacement}

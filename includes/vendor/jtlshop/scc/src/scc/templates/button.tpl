@@ -1,7 +1,16 @@
+{assign var=class value='px-4 py-2 rounded '|cat:$params.class}
 {if $params.variant->hasValue()}
-    {assign var=class value='btn '|cat:$params.class|cat:' btn-'|cat:$params.variant}
+    {if $params.variant == 'primary'}
+        {assign var=class value="$class bg-blue-600 text-white"}
+    {elseif $params.variant == 'secondary'}
+        {assign var=class value="$class bg-gray-600 text-white"}
+    {elseif $params.variant == 'link'}
+        {assign var=class value="$class text-blue-600 underline"}
+    {else}
+        {assign var=class value="$class bg-gray-200"}
+    {/if}
 {else}
-    {assign var=class value='btn '|cat:$params.class}
+    {assign var=class value="$class bg-gray-200"}
 {/if}
 
 {if $params.href->hasValue()}
@@ -12,7 +21,7 @@
 
 <{$tag}
     {if $tag == 'button'}type="{$params.type}"{/if}
-    class="{$class}{if $params.size->hasValue()} btn-{$params.size->getValue()}{/if}{if $params.block->getValue() === true} btn-block{/if}"
+    class="{$class}{if $params.size->hasValue()} text-{$params.size->getValue()}{/if}{if $params.block->getValue() === true} w-full{/if}"
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
     {if $params.href->hasValue()}href="{$params.href->getValue()}"{/if}
     {if $params.target->hasValue()}target="{$params.target->getValue()}"{/if}

@@ -1,6 +1,4 @@
-<div class="card {$params.class->getValue()}
-    {if $params['text-variant']->hasValue()}text-{$params['text-variant']->getValue()}{/if}
-    {if $params['border-variant']->hasValue()}border-{$params['border-variant']->getValue()}{/if}
+<div class="border rounded-sm shadow-sm {$params.class->getValue()}
     {if $params['bg-variant']->hasValue()}bg-{$params['bg-variant']->getValue()}{/if}"
     {if $params.id->hasValue()}id="{$params.id->getValue()}"{/if}
     {if $params.style->hasValue()}style="{$params.style->getValue()}"{/if}
@@ -24,16 +22,15 @@
         <img class="card-img-top" src="{$params['img-src']}" alt="{$params['img-alt']|default:''}">
     {/if}
     {if $params.header->hasValue()}
-        <{$params['header-tag']} class="card-header
+        <{$params['header-tag']} class="p-2 border-b
             {if $params['header-bg-variant']->hasValue()}bg-{$params['header-bg-variant']->getValue()}{/if}
-            {if $params['header-text-variant']->hasValue()}text-{$params['header-text-variant']->getValue()}{/if}
-            {if $params['header-border-variant']->hasValue()}border-{$params['header-border-variant']->getValue()}{/if}"
+            {if $params['header-text-variant']->hasValue()}text-{$params['header-text-variant']->getValue()}{/if}"
         >
             {$params.header}
         </{$params['header-tag']}>
     {/if}
     {if $params['no-body']->getValue() === false}
-        <div class="card-body{if $params.overlay->getValue() === true} card-img-overlay{/if}">
+        <div class="p-4{if $params.overlay->getValue() === true} absolute inset-0{/if}">
     {/if}
     {if $params['title-text']->hasValue()}
         <{$params['title-tag']->getValue()} class="card-title">{$params['title-text']}</{$params['title-tag']->getValue()}>
@@ -48,10 +45,9 @@
         </div>
     {/if}
     {if $params.footer->hasValue()}
-        <{$params['footer-tag']} class="card-footer
+        <{$params['footer-tag']} class="p-2 border-t
             {if $params['footer-bg-variant']->hasValue()}bg-{$params['footer-bg-variant']->getValue()}{/if}
-            {if $params['footer-text-variant']->hasValue()}text-{$params['footer-bg-variant']->getValue()}{/if}
-            {if $params['footer-border-variant']->hasValue()}border-{$params['footer-border-variant']->getValue()}{/if}"
+            {if $params['footer-text-variant']->hasValue()}text-{$params['footer-bg-variant']->getValue()}{/if}"
         >
             {$params.footer}
         </{$params['footer-tag']}>
