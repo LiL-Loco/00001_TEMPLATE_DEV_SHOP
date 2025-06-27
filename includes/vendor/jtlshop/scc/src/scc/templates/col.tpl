@@ -1,59 +1,25 @@
-{$class = 'col '|cat:$params.class->getValue()}
-{if $params.offset->hasValue()}
-    {$class = "{$class} offset-{$params.offset->getValue()}"}
+{$class = 'col-span-12 '|cat:$params.class->getValue()}
+{if $params.cols->hasValue()}
+    {$class = "{$class} col-span-{$params.cols->getValue()}"}
 {/if}
-{if $params['offset-sm']->hasValue()}
-    {$class = "{$class} offset-sm-{$params['offset-sm']->getValue()}"}
+{if $params.sm->getValue() !== false}
+    {$val = $params.sm->getValue() === true ? 12 : $params.sm->getValue()}
+    {$class = "{$class} sm:col-span-{$val}"}
 {/if}
-{if $params['offset-md']->hasValue()}
-    {$class = "{$class} offset-md-{$params['offset-md']->getValue()}"}
+{if $params.md->getValue() !== false}
+    {$val = $params.md->getValue() === true ? 12 : $params.md->getValue()}
+    {$class = "{$class} md:col-span-{$val}"}
 {/if}
-{if $params['offset-lg']->hasValue()}
-    {$class = "{$class} offset-lg-{$params['offset-lg']->getValue()}"}
+{if $params.lg->getValue() !== false}
+    {$val = $params.lg->getValue() === true ? 12 : $params.lg->getValue()}
+    {$class = "{$class} lg:col-span-{$val}"}
 {/if}
-{if $params['offset-xl']->hasValue()}
-    {$class = "{$class} offset-xl-{$params['offset-xl']->getValue()}"}
-{/if}
-{if $params.sm->getValue() === true}
-    {$class = "{$class} col-sm"}
-{elseif $params.sm->getValue() !== false}
-    {$class = "{$class} col-sm-{$params.sm->getValue()}"}
-{/if}
-{if $params.md->getValue() === true}
-    {$class = "{$class} col-md"}
-{elseif $params.md->getValue() !== false}
-    {$class = "{$class} col-md-{$params.md->getValue()}"}
-{/if}
-{if $params.lg->getValue() === true}
-    {$class = "{$class} col-lg"}
-{elseif $params.lg->getValue() !== false}
-    {$class = "{$class} col-lg-{$params.lg->getValue()}"}
-{/if}
-{if $params.xl->getValue() === true}
-    {$class = "{$class} col-xl"}
-{elseif $params.xl->getValue() !== false}
-    {$class = "{$class} col-xl-{$params.xl->getValue()}"}
+{if $params.xl->getValue() !== false}
+    {$val = $params.xl->getValue() === true ? 12 : $params.xl->getValue()}
+    {$class = "{$class} xl:col-span-{$val}"}
 {/if}
 {if $params.order->hasValue()}
     {$class = "{$class} order-{$params.order->getValue()}"}
-{/if}
-{if $params['order-sm']->hasValue()}
-    {$class = "{$class} order-sm-{$params['order-sm']->getValue()}"}
-{/if}
-{if $params['order-md']->hasValue()}
-    {$class = "{$class} order-md-{$params['order-md']->getValue()}"}
-{/if}
-{if $params['order-lg']->hasValue()}
-    {$class = "{$class} order-lg-{$params['order-lg']->getValue()}"}
-{/if}
-{if $params['order-xl']->hasValue()}
-    {$class = "{$class} order-xl-{$params['order-xl']->getValue()}"}
-{/if}
-{if $params.cols->hasValue()}
-    {$class = "{$class} col-{$params.cols->getValue()}"}
-{/if}
-{if $params['align-self']->hasValue()}
-    {$class = "{$class} align-self-{$params['align-self']->getValue()}"}
 {/if}
 
 <{$params.tag->getValue()}
