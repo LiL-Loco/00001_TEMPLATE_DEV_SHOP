@@ -2,7 +2,7 @@
     {if $nSeitenTyp === $smarty.const.PAGE_ARTIKELLISTE
         && !($isMobile || $Einstellungen.template.productlist.filter_placement === 'modal')}
         {foreach $oBox->getItems() as $characteristic}
-            <div id="sidebox{$oBox->getID()}-{$characteristic->getID()}" class="box box-filter-characteristics d-none d-lg-block">
+            <div id="sidebox{$oBox->getID()}-{$characteristic->getID()}" class="box box-filter-characteristics hidden lg:block">
                 {assign var=visible value=$characteristic->isActive() || $Einstellungen.template.productlist.filter_items_always_visible === 'Y'}
                 {button
                     variant="link"

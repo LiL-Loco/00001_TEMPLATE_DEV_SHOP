@@ -9,7 +9,7 @@
         {/block}
         {block name='productdetails-variation-spinner'}
             {row}
-                {col class="updatingStockInfo text-center-util d-none"}
+                {col class="updatingStockInfo text-center-util hidden"}
                     <i class="fa fa-spinner fa-spin" title="{lang key='updatingStockInformation' section='productDetails'}"></i>
                 {/col}
             {/row}
@@ -119,7 +119,7 @@
                                                         {if $bSelected}checked="checked"{/if}
                                                         {if $smarty.foreach.Variationswerte.index === 0 && !$showMatrix} required{/if}
                                                     >
-                                                    <label class="variation custom-control-label d-flex" for="{if isset($smallView) && $smallView}a-{$Artikel->kArtikel}{/if}vt{$Variationswert->kEigenschaftWert}"
+                                                    <label class="variation custom-control-label flex" for="{if isset($smallView) && $smallView}a-{$Artikel->kArtikel}{/if}vt{$Variationswert->kEigenschaftWert}"
                                                            data-type="radio"
                                                            data-original="{$Variationswert->cName}"
                                                            data-key="{$Variationswert->kEigenschaft}"

@@ -229,10 +229,10 @@
                                            aria-label="{if $CWunschliste->isPublic()}{lang key='wishlistNoticePublic' section='login'}{else}{lang key='wishlistNoticePrivate' section='login'}{/if}"
                                     >
                                     <label class="custom-control-label" for="wl-visibility-{$CWunschliste->getID()}">
-                                        <span data-switch-label-state="public-{$CWunschliste->getID()}" class="{if $CWunschliste->isPublic() !== true}d-none{/if}">
+                                        <span data-switch-label-state="public-{$CWunschliste->getID()}" class="{if $CWunschliste->isPublic() !== true}hidden{/if}">
                                             {lang key='wishlistNoticePublic' section='login'}
                                         </span>
-                                        <span data-switch-label-state="private-{$CWunschliste->getID()}" class="{if $CWunschliste->isPublic()}d-none{/if}">
+                                        <span data-switch-label-state="private-{$CWunschliste->getID()}" class="{if $CWunschliste->isPublic()}hidden{/if}">
                                             {lang key='wishlistNoticePrivate' section='login'}
                                         </span>
                                     </label>
@@ -248,7 +248,7 @@
                     {/row}
                 {/block}
                 {block name='snippets-wishlist-link'}
-                    {row class="wishlist-url {if $CWunschliste->isPublic() !== true}d-none{/if}" id='wishlist-url-wrapper'}
+                    {row class="wishlist-url {if $CWunschliste->isPublic() !== true}hidden{/if}" id='wishlist-url-wrapper'}
                         {col cols=12}
                             {form method="post" action=$wishlistURL}
                                 {block name='snippets-wishlist-link-inputs-hidden'}

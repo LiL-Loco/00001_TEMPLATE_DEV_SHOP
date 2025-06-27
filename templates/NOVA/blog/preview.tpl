@@ -33,14 +33,14 @@
                                     {/block}
                                 </div>
                             {else}
-                                <div itemprop="author publisher" itemscope itemtype="https://schema.org/Organization" class="d-none">
+                                <div itemprop="author publisher" itemscope itemtype="https://schema.org/Organization" class="hidden">
                                     <span itemprop="name">{$meta_publisher}</span>
                                     <meta itemprop="url" content="{$ShopURL}">
                                     <meta itemprop="logo" content="{$ShopLogoURL}">
                                 </div>
                             {/if}
-                            <time itemprop="dateModified" class="d-none">{$newsItem->getDateCreated()->format('Y-m-d')}</time>
-                            <time itemprop="datePublished" datetime="{$dDate}" class="d-none">{$dDate}</time>
+                            <time itemprop="dateModified" class="hidden">{$newsItem->getDateCreated()->format('Y-m-d')}</time>
+                            <time itemprop="datePublished" datetime="{$dDate}" class="hidden">{$dDate}</time>
                             <span class="align-middle">{$newsItem->getDateValidFrom()->format('d.m.Y')}</span>
                         {/block}
                     {/col}

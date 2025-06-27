@@ -23,7 +23,7 @@
             {col cols=12}
                 {row itemprop="review" itemscope=true itemtype="https://schema.org/Review"}
                     {block name='productdetails-review-item-title'}
-                        <span itemprop="name" class="d-none">{$oBewertung->cTitel}</span>
+                        <span itemprop="name" class="hidden">{$oBewertung->cTitel}</span>
                     {/block}
                     {block name='productdetails-review-item-review'}
                         {col class="col-auto text-center-util" itemprop="reviewRating" itemscope=true itemtype="https://schema.org/Rating"}
@@ -31,7 +31,7 @@
                                 {block name='productdetails-review-item-include-rating'}
                                     {include file='productdetails/rating.tpl' stars=$oBewertung->nSterne}
                                 {/block}
-                                <small class="d-none">
+                                <small class="hidden">
                                     <span itemprop="ratingValue">{$oBewertung->nSterne}</span> {lang key='from'}
                                     <span itemprop="bestRating">5</span>
                                     <meta itemprop="worstRating" content="1">

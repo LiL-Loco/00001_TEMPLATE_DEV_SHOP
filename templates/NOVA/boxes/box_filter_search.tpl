@@ -1,7 +1,7 @@
 {block name='boxes-box-filter-search'}
     {if $nSeitenTyp === $smarty.const.PAGE_ARTIKELLISTE
         && !($isMobile || $Einstellungen.template.productlist.filter_placement === 'modal')}
-        <div id="sidebox{$oBox->getID()}" class="box box-search-category d-none d-lg-block">
+        <div id="sidebox{$oBox->getID()}" class="box box-search-category hidden lg:block">
             {assign var=visible value=$NaviFilter->searchFilterCompat->isActive() || $Einstellungen.template.productlist.filter_items_always_visible === 'Y'}
             {button
                 variant="link"

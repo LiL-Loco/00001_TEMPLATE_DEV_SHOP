@@ -429,7 +429,7 @@
                 {inline_script}
                     <script>
                         setTimeout(function() {
-                            $('#consent-manager, #consent-settings-btn').removeClass('d-none');
+                            $('#consent-manager, #consent-settings-btn').removeClass('hidden');
                         }, 100)
                         document.addEventListener('consent.updated', function(e) {
                             $.post('{$ShopURLSSL}/_updateconsent', {
@@ -510,7 +510,7 @@
                     {/block}
                 {else}
                     {block name='layout-header-container-inner'}
-                        <div class="{if $headerWidth === 'B'}container{else}container-fluid {if $headerWidth === 'N'}container-fluid-xl{/if}{/if}">
+                        <div class="{if $headerWidth === 'B'}container{else}w-full {if $headerWidth === 'N'}max-w-screen-xl{/if}{/if}">
                         {block name='layout-header-category-nav'}
                             {block name='layout-header-category-nav-logo'}
                                 {include file='layout/header_logo.tpl'}
@@ -584,7 +584,7 @@
     {block name='layout-header-content-all-starttags'}
         {block name='layout-header-content-wrapper-starttag'}
             <div id="content-wrapper"
-                 class="{if ($Einstellungen.template.theme.left_sidebar === 'Y' && $boxesLeftActive) || $smarty.const.PAGE_ARTIKELLISTE === $nSeitenTyp}has-left-sidebar container-fluid container-fluid-xl{/if}
+                 class="{if ($Einstellungen.template.theme.left_sidebar === 'Y' && $boxesLeftActive) || $smarty.const.PAGE_ARTIKELLISTE === $nSeitenTyp}has-left-sidebar w-full max-w-screen-xl{/if}
                  {if $smarty.const.PAGE_ARTIKELLISTE === $nSeitenTyp}is-item-list{/if}
                         {if $isFluidBanner || $isFluidSlider} has-fluid{/if}">
         {/block}

@@ -128,8 +128,8 @@
                 {/block}
                 {block name='account-rma-summary-items-header-details'}
                 <div class="col">{lang key='rmaName' section='rma'}</div>
-                <div class="col col-auto d-none d-md-block">{lang key='rmaQuantity' section='rma'}</div>
-                <div class="col col-5 col-sm-4 col-md-3 text-right d-none d-sm-block">{lang key='rmaReason' section='rma'}</div>
+                <div class="col col-auto hidden md:block">{lang key='rmaQuantity' section='rma'}</div>
+                <div class="col col-5 col-sm-4 col-md-3 text-right hidden d-sm-block">{lang key='rmaReason' section='rma'}</div>
                 {/block}
             </div>
             {/block}
@@ -170,11 +170,11 @@
                         </div>
                     </div>
 
-                    <div class="col col-auto d-none d-md-block">
+                    <div class="col col-auto hidden md:block">
                         <span class="text-nowrap">{$pos->quantity}{$pos->unit}</span>
                     </div>
 
-                    <div class="col col-5 col-sm-4 col-md-3 text-right d-none d-sm-block">
+                    <div class="col col-5 col-sm-4 col-md-3 text-right hidden d-sm-block">
                         {$pos->getReason()->title}
                     </div>
                     {/block}
@@ -215,7 +215,7 @@
                 });
                 $('.reason-comment-toggle').on('click', function (e) {
                     e.preventDefault();
-                    $(this).parent().find('.reason-comment').toggleClass('d-none');
+                    $(this).parent().find('.reason-comment').toggleClass('hidden');
                 });
             });
         </script>

@@ -12,12 +12,12 @@
                                         {$wishlist->getName()}<br />
                                     {/block}
                                     {block name='snippets-wishlist-dropdown-punlic'}
-                                        <span data-switch-label-state="public-{$wishlist->getID()}" class="small {if $wishlist->isPublic() !== true}d-none{/if}">
+                                        <span data-switch-label-state="public-{$wishlist->getID()}" class="small {if $wishlist->isPublic() !== true}hidden{/if}">
                                             {lang key='public'}
                                         </span>
                                     {/block}
                                     {block name='snippets-wishlist-dropdown-private'}
-                                        <span data-switch-label-state="private-{$wishlist->getID()}" class="small {if $wishlist->isPublic()}d-none{/if}">
+                                        <span data-switch-label-state="private-{$wishlist->getID()}" class="small {if $wishlist->isPublic()}hidden{/if}">
                                             {lang key='private'}
                                         </span>
                                     {/block}

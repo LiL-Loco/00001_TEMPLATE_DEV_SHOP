@@ -9,7 +9,7 @@
                             {inputgroupaddon append=true}
                                 {button type="submit" variant="secondary" aria=["label"=>{lang key='search'}]}<span class="fas fa-search"></span>{/button}
                             {/inputgroupaddon}
-                            <span class="form-clear d-none"><i class="fas fa-times"></i></span>
+                            <span class="form-clear hidden"><i class="fas fa-times"></i></span>
                         {/inputgroup}
                     </div>
                 </form>
@@ -18,7 +18,7 @@
     {/block}
     {block name='layout-header-nav-search-search-dropdown'}
         {if $Einstellungen.template.header.mobile_search_type === 'dropdown'}
-            {navitemdropdown tag='div' class='search-wrapper-dropdown d-block d-lg-none'
+            {navitemdropdown tag='div' class='search-wrapper-dropdown block lg:hidden'
                 text='<i id="mobile-search-dropdown" class="fas fa-search"></i>'
                 right=true
                 no-caret=true

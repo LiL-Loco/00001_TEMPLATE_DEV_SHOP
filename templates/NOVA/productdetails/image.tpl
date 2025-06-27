@@ -37,7 +37,7 @@
                         {block name='productdetails-image-images'}
                             {foreach $Artikel->Bilder as $image}
                                 {strip}
-                                    <div class="square square-image js-gallery-images {if !$image@first}d-none{/if}">
+                                    <div class="square square-image js-gallery-images {if !$image@first}hidden{/if}">
                                         <div class="inner">
                                             {image alt=$image->cAltAttribut
                                                 class="product-image"
@@ -59,7 +59,7 @@
                         {/block}
                     </div>
                     {if $Artikel->Bilder|count > 1}
-                        <ul class="slick-dots initial-slick-dots d-lg-none" style="" role="tablist">
+                        <ul class="slick-dots initial-slick-dots lg:hidden" style="" role="tablist">
                             {foreach $Artikel->Bilder as $image}
                                 <li class="{if $image@first}slick-active{/if}" role="presentation">
                                     {button}{/button}
@@ -89,7 +89,7 @@
                                 {strip}
                                 <div class="square square-image js-gallery-images
                                     {if $image@first} preview-first {if $imageCount <= $imageCountDefault} first-ml{/if}
-                                    {elseif $image@index >= $imageCountDefault} d-none{/if}
+                                    {elseif $image@index >= $imageCountDefault} hidden{/if}
                                     {if $image@last && $imageCount <= $imageCountDefault} last-mr{/if}">
                                     <div class="inner">
                                         {image alt=$image->cAltAttribut
@@ -134,7 +134,7 @@
                     {foreach name=Variationswerte from=$Variation->Werte key=y item=Variationswert}
                         {if $Variationswert->getImage() !== null}
                             {block name='productdetails-image-variation-preview-inner'}
-                                <div class="variation-image-preview d-none fade vt{$Variationswert->kEigenschaftWert}">
+                                <div class="variation-image-preview hidden fade vt{$Variationswert->kEigenschaftWert}">
                                     {block name='productdetails-image-variation-preview-title'}
                                         {if $Variation->cTyp === 'IMGSWATCHES'}
                                             <div class="variation-image-preview-title">

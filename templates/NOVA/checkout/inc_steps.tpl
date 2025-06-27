@@ -13,7 +13,7 @@
                             {badge variant="primary" class="badge-pill"}
                                 <span class="badge-count">1</span>
                             {/badge}
-                            <span class="step-text {if !$step1_active}d-none d-md-inline-block{/if}">
+                            <span class="step-text {if !$step1_active}hidden d-md-inline-block{/if}">
                                 {lang section='account data' key='billingAndDeliveryAddress'}
                             </span>
                             {if $step2_active || $step3_active}
@@ -32,7 +32,7 @@
                             {badge variant="{if $step2_active || $step3_active}primary{else}secondary{/if}" class="badge-pill"}
                                 <span class="badge-count">2</span>
                             {/badge}
-                            <span class="step-text {if !$step2_active}d-none d-md-inline-block{/if}">
+                            <span class="step-text {if !$step2_active}hidden d-md-inline-block{/if}">
                                 {lang section='account data' key='shippingAndPaymentOptions'}
                             </span>
                             {if $step3_active}
@@ -48,7 +48,7 @@
                         {badge variant="{if $step3_active}primary{else}secondary{/if}" class="badge-pill"}
                             <span class="badge-count">3</span>
                         {/badge}
-                        <span class="step-text {if !$step3_active}d-none d-md-inline-block{/if}">
+                        <span class="step-text {if !$step3_active}hidden d-md-inline-block{/if}">
                             {lang section='checkout' key='summary'}
                         </span>
                     </div>

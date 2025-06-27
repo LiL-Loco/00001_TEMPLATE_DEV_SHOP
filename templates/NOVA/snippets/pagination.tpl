@@ -59,7 +59,7 @@
                                     {/if}
                                     {for $i=$oPagination->getLeftRangePage() to $oPagination->getRightRangePage()}
                                         <li class="page-item {if $oPagination->getPage() === $i}active{/if}">
-                                            {link class="page-link {if $oPagination->getPage() === $i}active{elseif $i > 0 && $i < $oPagination->getPageCount() - 1}d-none d-sm-block{/if}" href="{$cThisUrl}?{$oPagination->getId()}_nPage={$i}{$cUrlAppend}{$cAnchor}"}
+                                            {link class="page-link {if $oPagination->getPage() === $i}active{elseif $i > 0 && $i < $oPagination->getPageCount() - 1}hidden d-sm-block{/if}" href="{$cThisUrl}?{$oPagination->getId()}_nPage={$i}{$cUrlAppend}{$cAnchor}"}
                                                 {$i+1}
                                             {/link}
                                         </li>

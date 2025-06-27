@@ -11,7 +11,7 @@
             {/if}
         {/block}
         {block name='layout-header-nav-icons-include-language-dropdown'}
-            {include file='snippets/language_dropdown.tpl' dropdownClass="d-flex {if $Einstellungen.template.header.menu_show_topbar === 'Y'}d-lg-none{/if}"}
+            {include file='snippets/language_dropdown.tpl' dropdownClass="flex {if $Einstellungen.template.header.menu_show_topbar === 'Y'}lg:hidden{/if}"}
         {/block}
         {block name='layout-header-nav-icons-include-header-shop-nav-account'}
             {include file='layout/header_shop_nav_account.tpl'}

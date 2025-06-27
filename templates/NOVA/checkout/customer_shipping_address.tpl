@@ -190,7 +190,7 @@
                     {block name='checkout-customer-shipping-address-state'}
                         {formgroup
                             class="{if isset($fehlendeAngaben.bundesland)} has-error{/if}"
-                            label="{lang key='state' section='account data'}<span class='state-optional optional {if $Einstellungen.kunden.kundenregistrierung_abfragen_bundesland === 'Y' || $selectedCountry->isRequireStateDefinition()}d-none{/if}'> - {lang key='optional'}</span>"
+                            label="{lang key='state' section='account data'}<span class='state-optional optional {if $Einstellungen.kunden.kundenregistrierung_abfragen_bundesland === 'Y' || $selectedCountry->isRequireStateDefinition()}hidden{/if}'> - {lang key='optional'}</span>"
                             label-for="{$prefix}-{$name}-state"
                         }
                             {if !empty($oShippingStates)}

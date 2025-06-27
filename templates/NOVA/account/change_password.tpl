@@ -19,7 +19,7 @@
                                     {lang key='currentPassword' section='login'}, true, null, "current-password"
                                 ]
                             }
-                            <div class="form-group d-flex flex-column" role="group">
+                            <div class="form-group flex flex-column" role="group">
                                 {input type="password"
                                        class="form-control"
                                        placeholder=" "

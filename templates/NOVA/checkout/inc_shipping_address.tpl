@@ -9,7 +9,7 @@
             {checkbox id="checkout_register_shipping_address"
             name="shipping_address" value="0" checked=!$showShippingAddress
             data=["toggle"=>"collapse", "target"=>"#select-shipping-address"]
-            class="{if isset($forceDeliveryAddress)}d-none{/if}"
+            class="{if isset($forceDeliveryAddress)}hidden{/if}"
             }
             {lang key='shippingAdressEqualBillingAdress' section='account data'}
             {/checkbox}

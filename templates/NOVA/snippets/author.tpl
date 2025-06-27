@@ -29,7 +29,7 @@
                     {else}
                         {$title = "<span itemprop='name' class='snippets-author-title'>"|cat:$oAuthor->cName|cat:'</span>'}
                     {/if}
-                    <div id="author-{$oAuthor->kContentAuthor}" title="{$title}" class="d-none">
+                    <div id="author-{$oAuthor->kContentAuthor}" title="{$title}" class="hidden">
                         {block name='snippets-author-modal-content'}
                             {if !empty($oAuthor->cVitaShort)}
                                 {if !empty($oAuthor->cAvatarImgSrcFull)}
@@ -46,7 +46,7 @@
         </div>
     {/block}
     {block name='snippets-author-publisher'}
-        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" class="d-none">
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" class="hidden">
             <span itemprop="name">{$meta_publisher}</span>
             <meta itemprop="url" content="{$ShopURL}">
             <meta itemprop="logo" content="{$ShopLogoURL}">

@@ -2,7 +2,7 @@
     {$productCount = count(JTL\Session\Frontend::getCompareList()->oArtikel_arr)}
     <li id="shop-nav-compare"
         title="{lang key='compare'}"
-        class="nav-item dropdown{if $nSeitenTyp === $smarty.const.PAGE_VERGLEICHSLISTE} active{/if} {if $productCount === 0}d-none{/if}">
+        class="nav-item dropdown{if $nSeitenTyp === $smarty.const.PAGE_VERGLEICHSLISTE} active{/if} {if $productCount === 0}hidden{/if}">
         {block name='layout-header-shop-nav-compare-link'}
             {link class='nav-link' data=['toggle'=>'dropdown'] aria=['haspopup'=>'true', 'expanded'=>'false', 'label'=>{lang key='compare'}]}
                 <i class="fas fa-list">
