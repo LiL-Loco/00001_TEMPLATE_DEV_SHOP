@@ -88,6 +88,9 @@
         {/block}
 
         {block name='layout-header-head-resources'}
+            {* load Tailwind CSS and shadcn *}
+            <script src="https://cdn.tailwindcss.com"></script>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shadcn-ui@latest/dist/shadcn-ui.min.css"/>
             {if empty($parentTemplateDir)}
                 {$templateDir = $currentTemplateDir}
             {else}
