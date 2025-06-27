@@ -493,15 +493,15 @@
                 && $Einstellungen.template.header.menu_show_topbar === 'Y'
                 && $nSeitenTyp !== $smarty.const.PAGE_BESTELLVORGANG}
                 {block name='layout-header-branding-top-bar'}
-                    <div id="header-top-bar" class="d-none topbar-wrapper {if $Einstellungen.template.header.menu_single_row === 'Y'}full-width-mega{/if} {if $Einstellungen.template.header.header_full_width === 'Y'}is-fullwidth{/if} d-lg-flex">
-                        <div class="{if $headerWidth === 'B'}container{else}container-fluid {if $headerWidth === 'N'}container-fluid-xl{/if}{/if} d-lg-flex flex-row-reverse">
+                    <div id="header-top-bar" class="hidden topbar-wrapper {if $Einstellungen.template.header.menu_single_row === 'Y'}full-width-mega{/if} {if $Einstellungen.template.header.header_full_width === 'Y'}is-fullwidth{/if} lg:flex">
+                        <div class="{if $headerWidth === 'B'}container mx-auto px-4{else}w-full {if $headerWidth === 'N'}max-w-screen-xl mx-auto{/if}{/if} lg:flex flex-row-reverse">
                             {include file='layout/header_top_bar.tpl'}
                         </div>
                     </div>
                 {/block}
             {/if}
-            <header class="d-print-none {if $Einstellungen.template.header.menu_single_row === 'Y'}full-width-mega{/if}
-                        {if (!$isMobile || $Einstellungen.template.header.mobile_search_type !== 'fixed') && $Einstellungen.template.header.menu_scroll !== 'none'}sticky-top{/if}
+            <header class="print:hidden {if $Einstellungen.template.header.menu_single_row === 'Y'}full-width-mega{/if}
+                        {if (!$isMobile || $Einstellungen.template.header.mobile_search_type !== 'fixed') && $Einstellungen.template.header.menu_scroll !== 'none'}sticky top-0{/if}
                         fixed-navbar theme-{$Einstellungen.template.theme.theme_default}"
                     id="jtl-nav-wrapper">
                 {if $Einstellungen.template.header.menu_single_row === 'Y'}
@@ -518,12 +518,12 @@
                             {navbar toggleable=true fill=true type="expand-lg" class="justify-content-start {if $nSeitenTyp === $smarty.const.PAGE_BESTELLVORGANG}align-items-center-util{else}align-items-lg-end{/if}"}
                                 {if $nSeitenTyp === $smarty.const.PAGE_BESTELLVORGANG}
                                     {block name='layout-header-secure-checkout'}
-                                        <div class="secure-checkout-icon ml-auto-util ml-lg-0">
+                                        <div class="secure-checkout-icon ml-auto-util lg:ml-0">
                                             {block name='layout-header-secure-checkout-title'}
                                                 <i class="fas fa-lock icon-mr-2"></i>{lang key='secureCheckout' section='checkout'}
                                             {/block}
                                         </div>
-                                        <div class="secure-checkout-topbar ml-auto-util d-none d-lg-block">
+                                        <div class="secure-checkout-topbar ml-auto-util hidden lg:block">
                                             {block name='layout-header-secure-include-header-top-bar'}
                                                 {include file='layout/header_top_bar.tpl'}
                                             {/block}
@@ -545,7 +545,7 @@
                 {/if}
                 {block name='layout-header-search'}
                     {if $Einstellungen.template.header.mobile_search_type === 'fixed'}
-                        <div class="d-lg-none search-form-wrapper-fixed container-fluid container-fluid-xl order-1">
+                        <div class="lg:hidden search-form-wrapper-fixed w-full max-w-screen-xl order-1">
                             {include file='snippets/search_form.tpl' id='search-header-mobile-top'}
                         </div>
                     {/if}
@@ -553,7 +553,7 @@
             </header>
             {block name='layout-header-search-fixed'}
                 {if $Einstellungen.template.header.mobile_search_type === 'fixed' && $isMobile}
-                    <div class="container-fluid container-fluid-xl fixed-search fixed-top smoothscroll-top-search d-lg-none d-none">
+                    <div class="w-full max-w-screen-xl fixed-search fixed top-0 smoothscroll-top-search lg:hidden hidden">
                         {include file='snippets/search_form.tpl' id='search-header-mobile-fixed'}
                     </div>
                 {/if}
