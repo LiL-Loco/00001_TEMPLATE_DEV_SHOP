@@ -1,7 +1,7 @@
 {block name='account-rma-summary'}
 {assign var="returnReturn" value=true}
-<div class="row">
-    <div class="col col-12{if isset($rmaHistory) && count($rmaHistory) > 0} col-md-auto{/if}">
+<div class="flex flex-wrap">
+    <div class="w-full{if isset($rmaHistory) && count($rmaHistory) > 0} md:w-auto{/if}">
         {block name='account-rma-summary-title'}
         <h2>{lang key='rmaSummaryTitle' section='rma'}</h2>
         {/block}
@@ -35,7 +35,7 @@
                 <p>
                     {$returnAddress->academicTitle} {$returnAddress->firstName} {$returnAddress->lastName}<br>
 
-                    <span class="d-block mb-3">
+                    <span class="block mb-3">
                         {$returnAddress->street} {$returnAddress->houseNumber}{if $returnAddress->addressAdditional},
                             {$returnAddress->addressAdditional}
                         {/if}
@@ -63,7 +63,7 @@
                 </p>
             {/if}
             {if isset($returnShippingLabel)}
-                <a href="#rma-label" data-toggle="modal" class="btn btn-outline-primary">
+                <a href="#rma-label" data-modal class="border border-blue-600 text-blue-600 px-4 py-2 rounded">
                     <i class="fas fa-barcode"></i> Rücksendeetikett
                 </a>
 
@@ -76,7 +76,7 @@
     </div>
     {block name='account-rma-summary-history'}
     {if isset($rmaHistory) && count($rmaHistory) > 0}
-        <div class="col">
+        <div class="flex-1">
             <div class="card">
                 <h5 class="card-header">
                     <i class="fas fa-clipboard-list"></i> {lang key='rmaChangelog' section='rma'}
@@ -85,13 +85,13 @@
                     {foreach $rmaHistory as $historyEvent}
                         {$eventData=$rmaHistoryService->getLocalizedEventDataAsObject($historyEvent)}
                         <div class="border-bottom{if $historyEvent@last}-0{/if} my-3{if !$historyEvent@last} pb-3{/if}">
-                            <div class="row">
-                                <div class="col">
+                            <div class="flex flex-wrap">
+                                <div class="flex-1">
                                     <h5 class="text-muted mb-1">{$eventData->eventName}</h5>
                                     <p class="card-text">{$eventData->localizedText}</p>
                                 </div>
-                                <div class="col col-auto my-auto">
-                                    <div class="text-center badge badge-light">
+                                <div class="w-auto my-auto">
+                                    <div class="text-center inline-block px-2 py-1 bg-gray-200 text-gray-700 rounded">
                                         <div class="text-muted m-b-0">{$eventData->dateObject->day}</div>
                                         <span class="text-muted font-16">{strtoupper($eventData->dateObject->month)}</span>
                                     </div>
@@ -118,27 +118,27 @@
         </div>
         <div class="card-body limit-rows-row">
             {block name='account-rma-summary-items-header'}
-            <div class="row py-1 font-weight-bold text-nowrap">
+            <div class="flex flex-wrap py-1 font-bold whitespace-nowrap">
                 {block name='account-rma-summary-items-header-image'}
-                <div class="col-auto">
+                  <div class="w-auto">
                     <div class="w-45">
                         {lang key='rmaImage' section='rma'}
                     </div>
                 </div>
                 {/block}
                 {block name='account-rma-summary-items-header-details'}
-                <div class="col">{lang key='rmaName' section='rma'}</div>
-                <div class="col col-auto hidden md:block">{lang key='rmaQuantity' section='rma'}</div>
-                <div class="col col-5 col-sm-4 col-md-3 text-right hidden d-sm-block">{lang key='rmaReason' section='rma'}</div>
+                  <div class="flex-1">{lang key='rmaName' section='rma'}</div>
+                  <div class="w-auto hidden md:block">{lang key='rmaQuantity' section='rma'}</div>
+                  <div class="w-5/12 sm:w-4/12 md:w-3/12 text-right hidden sm:block">{lang key='rmaReason' section='rma'}</div>
                 {/block}
             </div>
             {/block}
             {block name='account-rma-summary-items-body'}
             {foreach $order as $pos}
                 {block name='account-rma-summary-items-body-item'}
-                <div class="row py-1 text-nowrap">
+                  <div class="flex flex-wrap py-1 whitespace-nowrap">
                     {block name='account-rma-summary-items-body-item-image'}
-                    <div class="col-auto">
+                      <div class="w-auto">
                         <div class="mw-45">
                             {if !empty($pos->getProduct()->cVorschaubildURL)}
                                 {include file='snippets/image.tpl' item=$pos->getProduct() square=false srcSize='xs'}
@@ -147,7 +147,7 @@
                     </div>
                     {/block}
                     {block name='account-rma-summary-items-body-item-details'}
-                    <div class="col">
+                      <div class="flex-1">
                         <div>
                             <a href="{$pos->getProduct()->cSeo}" target="_blank" class="line-clamp">{$pos->name}</a>
                             <small class="">
@@ -169,12 +169,11 @@
                             </small>
                         </div>
                     </div>
-
-                    <div class="col col-auto hidden md:block">
+                      <div class="w-auto hidden md:block">
                         <span class="text-nowrap">{$pos->quantity}{$pos->unit}</span>
                     </div>
 
-                    <div class="col col-5 col-sm-4 col-md-3 text-right hidden d-sm-block">
+                      <div class="w-5/12 sm:w-4/12 md:w-3/12 text-right hidden sm:block">
                         {$pos->getReason()->title}
                     </div>
                     {/block}
@@ -188,16 +187,16 @@
 {/block}
 {block name='account-rma-summary-buttons'}
     {if $showButtons|default:true}
-        <div class="row mt-3">
-            <div class="col col-md-6">
-                <a href="#" id="goBackOneStep" class="btn btn-outline-primary float-left">
+        <div class="flex flex-wrap mt-3">
+            <div class="w-full md:w-1/2">
+                <a href="#" id="goBackOneStep" class="border border-blue-600 text-blue-600 px-4 py-2 rounded float-left">
                     {lang key='edit' section='rma'}
                 </a>
             </div>
-            <div class="col col-md-6">
+            <div class="w-full md:w-1/2">
                 {form action="{get_static_route id='jtl.php'}" method="post"}
                     <input type="hidden" name="rmaCreateDateHash" value="{$rmaService->hashCreateDate($rma)}">
-                    <button type="submit" class="btn btn-primary float-right">
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded float-right">
                         {lang key='createRetoure' section='rma'}
                     </button>
                 {/form}
