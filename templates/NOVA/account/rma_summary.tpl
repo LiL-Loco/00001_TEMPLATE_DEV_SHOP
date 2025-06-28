@@ -169,7 +169,6 @@
                             </small>
                         </div>
                     </div>
-
                       <div class="w-auto hidden md:block">
                         <span class="text-nowrap">{$pos->quantity}{$pos->unit}</span>
                     </div>
