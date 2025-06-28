@@ -34,8 +34,8 @@
                     {if $category->hasChildren()}
                         {block name='snippets-categories-mega-category-child'}
                             <li class="nav-item nav-scrollbar-item dropdown dropdown-full
-                                {if $Einstellungen.template.megamenu.show_categories === 'mobile'} d-lg-none
-                                {elseif $Einstellungen.template.megamenu.show_categories === 'desktop'} d-none d-lg-inline-block {/if}
+                                {if $Einstellungen.template.megamenu.show_categories === 'mobile'} lg:hidden
+                                {elseif $Einstellungen.template.megamenu.show_categories === 'desktop'} hidden d-lg-inline-block {/if}
                                 {if $category->getID() === $activeId
                             || (isset($activeParent)
                                 && $activeParent->getID() === $category->getID())} active{/if}">
@@ -50,7 +50,7 @@
                                     <div class="dropdown-body">
                                         {container class="subcategory-wrapper"}
                                             {row class="lg-row-lg nav"}
-                                                {col lg=4 xl=3 class="nav-item-lg-m nav-item dropdown d-lg-none"}
+                                                {col lg=4 xl=3 class="nav-item-lg-m nav-item dropdown lg:hidden"}
                                                     {link href=$category->getURL()}
                                                         <strong class="nav-mobile-heading">{lang key='menuShow' printf=$category->getShortName()}</strong>
                                                     {/link}
@@ -80,8 +80,8 @@
                     {else}
                         {block name='snippets-categories-mega-category-no-child'}
                             {navitem href=$category->getURL() title=$category->getName()|escape:'html'
-                                class="nav-scrollbar-item {if $Einstellungen.template.megamenu.show_categories === 'mobile'} d-lg-none
-                                    {elseif $Einstellungen.template.megamenu.show_categories === 'desktop'} d-none d-lg-inline-block {/if}
+                                class="nav-scrollbar-item {if $Einstellungen.template.megamenu.show_categories === 'mobile'} lg:hidden
+                                    {elseif $Einstellungen.template.megamenu.show_categories === 'desktop'} hidden d-lg-inline-block {/if}
                                     {if $category->getID() === $activeId}active{/if}"
                                 data=["category-id"=>$category->getID()]}
                                 <span class="text-truncate d-block">{$category->getShortName()}</span>
@@ -120,7 +120,7 @@
                             {container}
                                 {row class="lg-row-lg nav"}
                                     {if $manufacturerOverview !== null}
-                                        {col lg=4 xl=3 class="nav-item-lg-m nav-item d-lg-none"}
+                                        {col lg=4 xl=3 class="nav-item-lg-m nav-item lg:hidden"}
                                             {block name='snippets-categories-mega-manufacturers-header'}
                                                 {link href="{$manufacturerOverview->getURL()}"}
                                                     <strong class="nav-mobile-heading">
@@ -170,7 +170,7 @@
 
     {if $isMobile}
         {block name='snippets-categories-mega-top-links-hr'}
-            <li class="d-lg-none"><hr></li>
+            <li class="lg:hidden"><hr></li>
         {/block}
         {block name='snippets-categories-mega-wishlist'}
         {if $Einstellungen.global.global_wunschliste_anzeigen === 'Y'}
@@ -199,7 +199,7 @@
         {if $linkgroups->getLinkGroupByTemplate('Kopf') !== null}
         {block name='snippets-categories-mega-top-links'}
             {foreach $linkgroups->getLinkGroupByTemplate('Kopf')->getLinks() as $Link}
-                {navitem class="nav-scrollbar-item d-lg-none" active=$Link->getIsActive() href=$Link->getURL() title=$Link->getTitle() target=$Link->getTarget()}
+                {navitem class="nav-scrollbar-item lg:hidden" active=$Link->getIsActive() href=$Link->getURL() title=$Link->getTitle() target=$Link->getTarget()}
                     {$Link->getName()}
                 {/navitem}
             {/foreach}
@@ -208,7 +208,7 @@
         {block name='layout-header-top-bar-user-settings'}
             {block name='layout-header-top-bar-user-settings-currency'}
                 {if JTL\Session\Frontend::getCurrencies()|count > 1}
-                    <li class="currency-nav-scrollbar-item nav-item nav-scrollbar-item dropdown dropdown-full d-lg-none">
+                    <li class="currency-nav-scrollbar-item nav-item nav-scrollbar-item dropdown dropdown-full lg:hidden">
                         {block name='layout-header-top-bar-user-settings-currency-link'}
                             {link id='currency-dropdown' href='#' title={lang key='currency'} class="nav-link dropdown-toggle" target="_self"}
                                 {lang key='currency'}
@@ -219,7 +219,7 @@
                                 <div class="dropdown-body">
                                     {container}
                                         {row class="lg-row-lg nav"}
-                                            {col lg=4 xl=3 class="nav-item-lg-m nav-item dropdown d-lg-none"}
+                                            {col lg=4 xl=3 class="nav-item-lg-m nav-item dropdown lg:hidden"}
                                                 {block name='layout-header-top-bar-user-settings-currency-header'}
                                                     <strong class="nav-mobile-heading">{lang key='currency'}</strong>
                                                 {/block}

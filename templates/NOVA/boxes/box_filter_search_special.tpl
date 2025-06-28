@@ -6,7 +6,7 @@
         && (!empty($Suchergebnisse->getSearchSpecialFilterOptions()) || $ssf->isInitialized())
         && !($isMobile || $Einstellungen.template.productlist.filter_placement === 'modal')}
         {if $nSeitenTyp === $smarty.const.PAGE_ARTIKELLISTE}
-            <div id="sidebox{$oBox->getID()}" class="box box-filter-special d-none d-lg-block">
+            <div id="sidebox{$oBox->getID()}" class="box box-filter-special hidden lg:block">
                 {assign var=visible value=$ssf->isActive() || $Einstellungen.template.productlist.filter_items_always_visible === 'Y'}
                 {button
                     variant="link"

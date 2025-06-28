@@ -4,7 +4,7 @@
     {/block}
 
     {block name='checkout-step6-init-payment-content'}
-        <div class="container">
+        <div class="max-w-screen-lg mx-auto px-4">
             {block name='checkout-step6-init-payment-heading'}
                 {if $smarty.session.Zahlungsart->nWaehrendBestellung == 1}
                     <h1>{lang key='orderCompletedPre' section='checkout'}</h1>

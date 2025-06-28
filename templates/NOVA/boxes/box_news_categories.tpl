@@ -12,13 +12,13 @@
                 {/link}
             {/block}
             {block name='boxes-box-news-categories-title'}
-                <div class="productlist-filter-headline d-none d-md-flex">
+                <div class="productlist-filter-headline hidden md:flex">
                     {lang key='newsBoxCatOverview'}
                 </div>
             {/block}
             {block name='boxes-box-news-categories-collapse'}
                 {collapse
-                    class="d-md-block"
+                    class="md:block"
                     visible=false
                     id="crd-cllps-{$oBox->getID()}"
                     aria=["labelledby"=>"crd-hdr-{$oBox->getID()}"]}

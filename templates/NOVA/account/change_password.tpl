@@ -19,7 +19,7 @@
                                     {lang key='currentPassword' section='login'}, true, null, "current-password"
                                 ]
                             }
-                            <div class="form-group d-flex flex-column" role="group">
+                            <div class="form-group flex flex-column" role="group">
                                 {input type="password"
                                        class="form-control"
                                        placeholder=" "
@@ -45,7 +45,7 @@
                             {block name='account-change-password-form-submit'}
                                 {row}
                                     {col cols=12 class='col-md'}
-                                        {link class="btn btn-outline-primary btn-back" href="{get_static_route id='jtl.php'}"}
+                                        {link class="border border-blue-600 text-blue-600 px-4 py-2 rounded btn-back" href="{get_static_route id='jtl.php'}"}
                                             {lang key='back'}
                                         {/link}
                                     {/col}

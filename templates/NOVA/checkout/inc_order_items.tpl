@@ -1,5 +1,5 @@
 {block name='checkout-inc-order-items'}
-    {input type="submit" name="fake" class="d-none"}
+    {input type="submit" name="fake" class="hidden"}
     {if $Einstellungen.kaufabwicklung.warenkorb_produktbilder_anzeigen === 'Y'}
         {$itemInfoCols=5}
         {$cols=9}
@@ -13,7 +13,7 @@
 
     {block name='checkout-inc-order-items-order-items'}
         {block name='checkout-inc-order-items-order-items-header'}
-            {row class="checkout-items-header text-accent d-none d-lg-flex"}
+            {row class="checkout-items-header text-accent hidden lg:flex"}
                 {if $Einstellungen.kaufabwicklung.warenkorb_produktbilder_anzeigen === 'Y'}
                     {col cols=2}{/col}
                 {/if}
@@ -24,7 +24,7 @@
                 {col cols=1 class="text-center-util"}{lang key="quantity" section="checkout"}{/col}
                 {col cols=2 class="text-right-util"}{lang key="price"}{/col}
             {/row}
-            <hr class="checkout-items-header-hr d-none d-lg-flex">
+            <hr class="checkout-items-header-hr hidden lg:flex">
         {/block}
         {block name='checkout-inc-order-items-order-items-main'}
         {foreach JTL\Session\Frontend::getCart()->PositionenArr as $oPosition}

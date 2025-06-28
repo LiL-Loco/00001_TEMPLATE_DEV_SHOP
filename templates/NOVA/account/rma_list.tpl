@@ -39,7 +39,7 @@
                         {foreach $rmaService->rmas as $rma}
                             {$returnAddress = $rma->getReturnAddress()}
                             <tr>
-                                <td class="d-none">{$rma->createDate}</td>
+                                <td class="hidden">{$rma->createDate}</td>
                                 <td>
                                     <div class="d-block font-weight-bold">
                                         <span class="far fa-calendar mr-2"></span>{$rmaService::localizeDate($rma->createDate)}

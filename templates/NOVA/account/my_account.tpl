@@ -187,7 +187,7 @@
                                 {/block}
                             {else}
                                 {block name='account-my-account-shipping-address-no-data'}
-                                    {cardbody class="d-flex justify-content-center align-items-center flex-column"}
+                                    {cardbody class="flex justify-content-center align-items-center flex-column"}
                                         <p>{lang key='youHaveNoShippingAddress' section='rma'}</p>
                                         {link class="btn btn-outline-secondary btn-sm" href="$cCanonicalURL?editLieferadresse=1"}
                                             <i class="fa fa-truck" aria-label="{lang key='shippingAdress' section='account data'}"
@@ -245,7 +245,7 @@
                                                 <td class="text-right-util">
                                                    {$order->Status}
                                                 </td>
-                                                <td class="text-right-util d-none d-md-table-cell">
+                                                <td class="text-right-util hidden d-md-table-cell">
                                                     {if $Einstellungen.global.global_rma_enabled === 'Y'
                                                         && $rmaService->isOrderReturnable($order->kBestellung, $returnableProducts)}
                                                         <a href="{$cCanonicalURL}?newRMA={$order->kBestellung}"
@@ -329,7 +329,7 @@
                                                         </small>
                                                     {/if}
                                                 </td>
-                                                <td class="text-right-util d-none d-md-table-cell">
+                                                <td class="text-right-util hidden d-md-table-cell">
                                                     <span class="fa fa-eye"></span>
                                                 </td>
                                             </tr>
@@ -346,7 +346,7 @@
                             {/link}
                         {else}
                             {block name='account-my-account-rma-no-data'}
-                            {cardbody class="d-flex justify-content-center align-items-center flex-column"}
+                            {cardbody class="flex justify-content-center align-items-center flex-column"}
                                 <p>{lang key='rmaNoItems' section='rma'}</p>
                                 {link class="btn btn-outline-secondary btn-sm" href="$cCanonicalURL?newRMA=0"}
                                     {lang key='createRetoure' section='rma'}
@@ -390,10 +390,10 @@
                                             {block name='account-my-account-wishlist-visibility'}
                                                 <td class="text-right-util">
                                                     <div class="d-inline-flex flex-nowrap">
-                                                        <span data-switch-label-state="public-{$wishlist->getID()}" class="{if $wishlist->isPublic() !== true}d-none{/if}">
+                                                        <span data-switch-label-state="public-{$wishlist->getID()}" class="{if $wishlist->isPublic() !== true}hidden{/if}">
                                                             {lang key='public'}
                                                         </span>
-                                                        <span data-switch-label-state="private-{$wishlist->getID()}" class="{if $wishlist->isPublic()}d-none{/if}">
+                                                        <span data-switch-label-state="private-{$wishlist->getID()}" class="{if $wishlist->isPublic()}hidden{/if}">
                                                             {lang key='private'}
                                                         </span>
                                                         <div class="custom-control custom-switch">

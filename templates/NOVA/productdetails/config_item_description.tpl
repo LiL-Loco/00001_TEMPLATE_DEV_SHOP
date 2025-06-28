@@ -1,6 +1,6 @@
 {block name='productdetails-config-item-description'}
     {row class="cfg-item-description"}
-        {col cols=12 lg=9 class="d-flex align-items-center"}
+        {col cols=12 lg=9 class="flex align-items-center"}
             {include file='snippets/image.tpl' class="mr-2" item=$oItem->getArtikel() square=false fluid=false width=60 height='auto' srcSize='sm' sizes="15vw" alt=$oItem->getName()}
             <dl>
                 <dt>{if !empty($oItem->getArtikelKey())}

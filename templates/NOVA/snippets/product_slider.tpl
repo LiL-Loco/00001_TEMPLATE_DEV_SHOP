@@ -35,7 +35,7 @@
                         {if isset($id) && $id|strlen > 0} id="{$id}"{/if}>
                     {if !empty($title)}
                         {block name='snippets-product-slider-other-title'}
-                            {if $titleContainer|default:false}<div class="container slick-slider-other-container">{/if}
+                            {if $titleContainer|default:false}<div class="max-w-screen-xl mx-auto px-4 slick-slider-other-container">{/if}
                                 <div class="hr-sect h2">
                                     {if !empty($moreLink)}
                                         {link class="text-decoration-none-util" href=$moreLink title=$moreTitle

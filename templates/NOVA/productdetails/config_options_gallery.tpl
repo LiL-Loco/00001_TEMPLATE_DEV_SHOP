@@ -1,11 +1,11 @@
 {block name='productdetails-config-options'}
     {row class="cfg-group-gallery-wrapper"}
-        {col cols=3 class="d-none d-md-block"}
+        {col cols=3 class="hidden md:block"}
             <nav id="cfg-nav" class="navbar navbar-light bg-light sticky-top">
                 <nav class="nav nav-pills flex-column">
                     {foreach $Artikel->oKonfig_arr as $configGroup}
                         {$configLocalization = $configGroup->getSprache()}
-                        <a id="cfg-nav-{$configGroup->getID()}" class="nav-link" href="#cfg-grp-{$configGroup->getID()}">{$configLocalization->getName()} <span class="d-none js-group-checked"><i class="fas fa-check text-success"></i></span></a>
+                        <a id="cfg-nav-{$configGroup->getID()}" class="nav-link" href="#cfg-grp-{$configGroup->getID()}">{$configLocalization->getName()} <span class="hidden js-group-checked"><i class="fas fa-check text-success"></i></span></a>
                     {/foreach}
                 </nav>
             </nav>

@@ -4,7 +4,7 @@
     {/block}
     {if !$bCookieErlaubt}
         {block name='account-login-alert-no-cookie'}
-            {alert variant="danger" class="d-none" id="no-cookies-warning"}
+            {alert variant="danger" class="hidden" id="no-cookies-warning"}
                 <strong>{lang key='noCookieHeader' section='errorMessages'}</strong>
                 <p>
                     {lang key='noCookieDesc' section='errorMessages' assign='noCookieDesc'}

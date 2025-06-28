@@ -88,7 +88,7 @@
                                 alt=$attributeValue->getValue()|escape:'html'
                                 class="vmiddle filter-img"
                             }
-                            <span class="d-none filter-item-value">
+                            <span class="hidden filter-item-value">
                                 {$attributeValue->getValue()|escape:'html'}
                             </span>
                         {/link}

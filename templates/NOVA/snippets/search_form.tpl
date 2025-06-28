@@ -9,7 +9,7 @@
                         <span class="fas fa-search"></span>
                     {/button}
                 {/inputgroupaddon}
-                <span class="form-clear d-none"><i class="fas fa-times"></i></span>
+                <span class="form-clear hidden"><i class="fas fa-times"></i></span>
             {/inputgroup}
         {/form}
     </div>

@@ -76,7 +76,7 @@
                         {block name='snippets-linkgroup-mega-recursive-main-link'}
                             {link href=$mainLink->getURL()
                                 nofollow=$mainLink->getNoFollow()
-                                class="d-lg-block {if $firstChild}submenu-headline submenu-headline-toplevel{/if} {$subCategory} {if $mainLink->getChildLinks()->count() > 0}nav-link dropdown-toggle{/if}"
+                                class="lg:block {if $firstChild}submenu-headline submenu-headline-toplevel{/if} {$subCategory} {if $mainLink->getChildLinks()->count() > 0}nav-link dropdown-toggle{/if}"
                                 aria=["expanded"=>"false"]
                                 target=$mainLink->getTarget()}
                                 <span class="text-truncate d-block">
@@ -89,7 +89,7 @@
                                 <div class="categories-recursive-dropdown dropdown-menu">
                                     {nav}
                                     {block name='snippets-linkgroup-recursive-mega-child-header'}
-                                        <li class="nav-item d-lg-none">
+                                        <li class="nav-item lg:hidden">
                                             {link href=$mainLink->getURL() target=$mainLink->getTarget()}
                                                 <strong class="nav-mobile-heading">
                                                     {lang key='menuShow' printf=$mainLink->getName()}

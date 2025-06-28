@@ -37,7 +37,7 @@
                                 src=$filterOption->getData('cBildpfadKlein')
                                 class="vmiddle filter-img"
                             }
-                            <span class="d-none filter-item-value">{$filterOption->getName()}</span>
+                            <span class="hidden filter-item-value">{$filterOption->getName()}</span>
                         {/block}
                     {elseif $Einstellungen.navigationsfilter.hersteller_anzeigen_als === 'BT'}
                         {block name='snippets-filter-manufacturer-item-image-text'}

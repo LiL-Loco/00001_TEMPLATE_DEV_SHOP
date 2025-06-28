@@ -12,7 +12,7 @@
                     title="{lang key='list' section='productOverview'}"
                     aria=["label"=>{lang key='list' section='productOverview'}]
                 }
-                    <span class="fa fa-th-list d-none d-md-inline-flex"></span><span class="fa fa-square d-inline-flex d-md-none"></span>
+                    <span class="fa fa-th-list hidden d-md-inline-flex"></span><span class="fa fa-square d-inline-flex d-mhidden"></span>
                 {/link}
             {/block}
             {block name='productlist-layout-options-list'}

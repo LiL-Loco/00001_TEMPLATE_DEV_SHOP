@@ -70,7 +70,7 @@
     {/col}
 {/row}
 {block name='account-rma-summary'}
-{row class="rma-step-2 d-none"}
+{row class="rma-step-2 hidden"}
     {col}
         <div id="rma-summary"></div>
     {/col}
@@ -138,9 +138,9 @@
         function setListenerForToggles() {
             $('.ra-switch').off('change').on('change', function () {
                 if ($(this).prop('checked')) {
-                    $(this).closest('tr').find('.rmaFormItems').removeClass('d-none').addClass('d-flex');
+                    $(this).closest('tr').find('.rmaFormItems').removeClass('hidden').addClass('flex');
                 } else {
-                    $(this).closest('tr').find('.rmaFormItems').removeClass('d-flex').addClass('d-none');
+                    $(this).closest('tr').find('.rmaFormItems').removeClass('flex').addClass('hidden');
                 }
                 $('#rma').submit();
                 let selectAll = $('.select_all');
@@ -225,11 +225,11 @@
 
         function step(goTo) {
             if (goTo === 1) {
-                $('.rma-step-1').removeClass('d-none');
-                $('.rma-step-2').addClass('d-none');
+                $('.rma-step-1').removeClass('hidden');
+                $('.rma-step-2').addClass('hidden');
             } else if (goTo === 2) {
-                $('.rma-step-2').removeClass('d-none');
-                $('.rma-step-1').addClass('d-none');
+                $('.rma-step-2').removeClass('hidden');
+                $('.rma-step-1').addClass('hidden');
                 setListenerForBackButton();
             }
         }

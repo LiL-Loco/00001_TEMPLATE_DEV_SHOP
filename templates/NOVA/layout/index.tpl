@@ -42,7 +42,7 @@
             {block name='layout-index-link-types'}
                 {if $Link->getLinkType() === $smarty.const.LINKTYP_AGB}
                     {block name='layout-index-link-type-tos'}
-                        <div id="tos" class="well well-sm">
+                        <div id="tos" class="p-4 border border-gray-300 bg-gray-50 rounded-sm">
                             {opcMountPoint id='opc_before_tos' inContainer=false}
                             {if $AGB !== false}
                                 {container fluid=$Link->getIsFluid() class="{if $Einstellungen.template.theme.left_sidebar === 'Y' && $boxesLeftActive}container-plus-sidebar{/if}"}
@@ -58,7 +58,7 @@
                     {/block}
                 {elseif $Link->getLinkType() === $smarty.const.LINKTYP_WRB}
                     {block name='layout-index-link-type-revocation'}
-                        <div id="revocation-instruction" class="well well-sm">
+                        <div id="revocation-instruction" class="p-4 border border-gray-300 bg-gray-50 rounded-sm">
                             {opcMountPoint id='opc_before_revocation' inContainer=false}
                             {if $WRB !== false}
                                 {container fluid=$Link->getIsFluid() class="{if $Einstellungen.template.theme.left_sidebar === 'Y' && $boxesLeftActive}container-plus-sidebar{/if}"}
@@ -74,7 +74,7 @@
                     {/block}
                 {elseif $Link->getLinkType() === $smarty.const.LINKTYP_WRB_FORMULAR}
                     {block name='layout-index-link-type-revocation-form'}
-                        <div id="revocation-form" class="well well-sm">
+                        <div id="revocation-form" class="p-4 border border-gray-300 bg-gray-50 rounded-sm">
                             {opcMountPoint id='opc_before_revocation_form' inContainer=false}
                             {if $WRB !== false}
                                 {container fluid=$Link->getIsFluid() class="{if $Einstellungen.template.theme.left_sidebar === 'Y' && $boxesLeftActive}container-plus-sidebar{/if}"}
@@ -90,7 +90,7 @@
                     {/block}
                 {elseif $Link->getLinkType() === $smarty.const.LINKTYP_DATENSCHUTZ}
                     {block name='layout-index-link-type-data-privacy'}
-                        <div id="data-privacy" class="well well-sm">
+                        <div id="data-privacy" class="p-4 border border-gray-300 bg-gray-50 rounded-sm">
                             {opcMountPoint id='opc_before_data_privacy' inContainer=false}
                             {if $WRB !== false}
                                 {container fluid=$Link->getIsFluid() class="{if $Einstellungen.template.theme.left_sidebar === 'Y' && $boxesLeftActive}container-plus-sidebar{/if}"}

@@ -27,7 +27,7 @@
                                     <div class="dropdown-body">
                                         {container class='subcategory-wrapper'}
                                             {row class="lg-row-lg nav"}
-                                                {col lg=4 xl=3 class="nav-item-lg-m nav-item dropdown d-lg-none"}
+                                                {col lg=4 xl=3 class="nav-item-lg-m nav-item dropdown lg:hidden"}
                                                     {block name='snippets-linkgroup-list-links-header'}
                                                         {link href=$li->getURL() title=$li->getName() target=$li->getTarget()}
                                                             <strong class="nav-mobile-heading">{lang key='menuShow' printf=$li->getName()}</strong>

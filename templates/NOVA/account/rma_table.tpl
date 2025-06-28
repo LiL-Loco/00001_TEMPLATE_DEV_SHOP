@@ -15,11 +15,11 @@
             )}
             {assign var=itemUniqueID value="{$product->shippingNotePosID}_{$product->id}"}
             <tr>
-                <td class="d-none">{$product->getOrderNo()}</td>
+                <td class="hidden">{$product->getOrderNo()}</td>
                 <td class="product px-0">
                     {block name='account-rma-table-body-product'}
-                    <div class="d-flex flex-wrap">
-                        <div class="d-flex flex-nowrap flex-grow-1">
+                    <div class="flex flex-wrap">
+                        <div class="flex flex-nowrap flex-grow-1">
                             {block name='account-rma-table-body-product-image'}
                             <div class="d-block">
                                 {image lazy=true webp=true fluid=true
@@ -28,7 +28,7 @@
                                 class="img-aspect-ratio product-thumbnail pr-2"}
                             </div>
                             {/block}
-                            <div class="d-flex flex-nowrap flex-grow-1 flex-column">
+                            <div class="flex flex-nowrap flex-grow-1 flex-column">
                                 {block name='account-rma-table-body-product-name'}
                                 <div class="d-inline-flex flex-nowrap justify-content-between">
                                     <a href="{$product->getSeo()}" target="_blank"
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         {block name='account-rma-table-body-product-form'}
-                        <div class="{if $rmaItem->id > 0}d-flex {else}d-none {/if}rmaFormItems flex-wrap mt-2 w-100">
+                        <div class="{if $rmaItem->id > 0}flex {else}hidden {/if}rmaFormItems flex-wrap mt-2 w-100">
                             <div class="qty-wrapper max-w-md mr-2 mb-2">
                                 {inputgroup id="quantity-grp{$itemUniqueID}" class="form-counter choose_quantity"}
                                 {inputgroupprepend}

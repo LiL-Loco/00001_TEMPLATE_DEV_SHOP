@@ -2,7 +2,7 @@
 {if isset($rmaItems)}
     {cardheader}
     {block name='account-rma-itemlist-header'}
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="flex justify-content-between align-items-center">
         <span class="h3 mb-0">
             {lang key='rma_products' section='rma'}
         </span>
